@@ -9,6 +9,9 @@ require("dotenv").config();
 
 connect_db();
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(expressLayouts);
 app.set("layout", "./layouts/main")
 
