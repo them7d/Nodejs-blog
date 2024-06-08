@@ -1,0 +1,19 @@
+<h1>search result</h1>
+<section>
+      <ul>
+            <div class="grow md:mx-12 mt-5">
+                  <% data.forEach(post=> { %>
+                        <a href="/post/<%= post._id%>">
+                              <li class="flex justify-between mb-5">
+                                    <h2>
+                                          <%= post.title %>
+                                    </h2>
+                                    <div class="time">
+                                          <%= post.createdAt.toDateString() %>
+                                    </div>
+                              </li>
+                        </a>
+                        <% }); %>
+            </div>
+      </ul>
+</section>
