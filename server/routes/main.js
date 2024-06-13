@@ -1,13 +1,15 @@
 const express = require("express");
 const router = express.Router();
-
+const { isActiveRoute } = require("../helpers/routeHelpers.js")
 const Post = require("../modules/Post");
 
 router.get("/", async (req, res) => {
       try {
             const locals = {
                   title: "NodeJs Blog",
-                  description: "Simple Blog created with NodeJs, Express & MongoDb."
+                  description: "Simple Blog created with NodeJs, Express & MongoDb.",
+                  currentRoute: "/",
+                  isActiveRoute: isActiveRoute,
             }
             let perPage = 1;
             let page = req.query.page || 1;
@@ -38,13 +40,13 @@ router.get("/post/:id", async (req, res) => {
       try {
             const slug = req.params.id;
             const data = await Post.findById({ _id: slug })
-            // remove it later
-            // const locals = {
-            //       title: "NodeJs Blog",
-            //       description: "Simple Blog created with NodeJs, Express & MongoDb."
-            // }
+            const locals = {
+                  title: "NodeJs Blog",
+                  description: "Simple Blog created with NodeJs, Express & MongoDb.",
+                  currentRoute: `/post/${slug}`
+            }
             const post = await Post.find();
-            res.render("post", { data });
+            res.render("post", { data, locals });
       }
       catch (error) {
             console.log(error);
@@ -82,7 +84,7 @@ router.post("/search", async (req, res) => {
 router.get("/about", async (req, res) => {
       try {
             const data = await Post.find();
-            res.render("about", data);
+            res.render("about", { data, currentRoute: "/about" });
       }
       catch (err) { console.error(err) }
       // res.render("about", { title: "about" });
