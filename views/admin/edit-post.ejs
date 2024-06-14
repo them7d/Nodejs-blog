@@ -3,8 +3,8 @@
       <h2 class="my-4 text-3xl font-bold">View / Edit Post</h2>
       <form action="/delete-post/<%- data._id %>?_method=DELETE" method="POST">
             <div class="relative mb-4">
-                  <input type="submit" value="Deleten" id="Delete"
-                        class="w-full bg-red-500 rounded border cursor-pointer border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                  <input type="submit" value="Delete" id="Delete"
+                        class="w-full bg-red-500 dark:bg-red-700 dark:text-gray-200 rounded border cursor-pointer border-gray-300 dark:border-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
             </div>
       </form>
 </div>
@@ -12,15 +12,15 @@
 </script>
 <form action="/edit-post/<%- data._id %>?_method=PUT" method="POST">
       <div class="relative mb-4">
-            <label for="title" class="leading-7 text-sm text-gray-600">title</label>
+            <label for="title" class="leading-7 text-sm text-gray-600 dark:text-gray-300">title</label>
             <input type="text" id="title" name="title"
-                  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  class="w-full bg-white rounded border border-gray-300 dark:border-gray-800 dark:text-gray-300 dark:bg-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   value="<%- data.title %>">
       </div>
       <div class="relative mb-4">
-            <label for="description" class="leading-7 text-sm text-gray-600">content </label>
+            <label for="description" class="leading-7 text-sm text-gray-600 dark:text-gray-300">content </label>
             <textarea type="text" id="description" name="body"
-                  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><%- data.body %></textarea>
+                  class="w-full bg-white rounded border border-gray-300 dark:border-gray-800 dark:text-gray-300 dark:bg-gray-900 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><%- data.body %></textarea>
       </div>
       <button
             class="inline-flex text-white bg-indigo-800 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-700 rounded text-lg">

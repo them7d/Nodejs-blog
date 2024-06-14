@@ -1,7 +1,8 @@
-<section class="text-gray-600 body-font">
+<section class="text-gray-600 dark:text-gray-300 body-font">
       <div class="container px-5 py-24 mx-auto">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 mb-20">Raw Denim Heirloom
-                  Man Braid
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-center text-gray-900 dark:text-gray-100 mb-20">
+                  Raw Denim Heirloom
+                  Man
                   <br class="hidden sm:block">Selfies Wayfarers
             </h1>
             <ul>
@@ -23,13 +24,13 @@
             <div class="flex justify-between">
                   <div>
                         <% if (current> 1) { %>
-                              <a href="/?page=<%- current - 1 %>" class="pagination">&lt; view previous posts</a>
+                              <a href="/?page=<%- current - 1 %>" class="pagination">&larr; view previous posts</a>
 
                               <% } %>
                   </div>
                   <div>
                         <% if (nextPage !==null) { %>
-                              <a href="/?page=<%- nextPage %>" class="pagination">view new posts &rAarr;</a>
+                              <a href="/?page=<%- nextPage %>" class="pagination">view new posts &rarr;</a>
 
                               <% } %>
                   </div>
