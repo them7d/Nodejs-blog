@@ -40,12 +40,12 @@ router.get("/admin", (req, res) => {
       }
       if (req.cookies.token) {
             res.redirect("/dashboard");
-      }else{
-      try {
-            res.render("admin/index", { locals, layout: adminLayout })
-      }
-      catch (error) {
-            console.log(error);
+      } else {
+            try {
+                  res.render("admin/index", { locals, layout: adminLayout })
+            }
+            catch (error) {
+                  console.log(error);
             }
       }
 });
