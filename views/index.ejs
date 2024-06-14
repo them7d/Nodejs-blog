@@ -20,9 +20,20 @@
                               <% }); %>
                   </div>
             </ul>
-            <% if (nextPage !==null) { %>
-                  <a href="/?page=<%- nextPage %>" class="pagination">&lt; view older posts</a>
+            <div class="flex justify-between">
+                  <div>
+                        <% if (current> 1) { %>
+                              <a href="/?page=<%- current - 1 %>" class="pagination">&lt; view previous posts</a>
 
-                  <% } %>
+                              <% } %>
+                  </div>
+                  <div>
+                        <% if (nextPage !==null) { %>
+                              <a href="/?page=<%- nextPage %>" class="pagination">view new posts &rAarr;</a>
+
+                              <% } %>
+                  </div>
+
+            </div>
       </div>
 </section>
